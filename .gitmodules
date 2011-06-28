@@ -1,0 +1,4 @@
+[submodule ".vim/bundle/fugitive"]
+	path = .vim/bundle/fugitive
+	url = http://github.com/tpope/vim-fugitive.git
+	url = https://github.com/fs111/pydoc.vim.git
