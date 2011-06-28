@@ -156,10 +156,6 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute("normal 
 " Avoid loading MatchParen plugin
 let loaded_matchparen = 1
 
-" netRW: Open files in a split window
-let g:netrw_browse_split = 1
-
-"
 " MAPPINGS
 "
 
@@ -172,7 +168,9 @@ map <right> <nop>
 " switch to upper/lower window quickly
 map <C-J> <C-W>j
 map <C-K> <C-W>k
-" map ,f to display all lines with keyword under cursor and ask which one to
+map <C-H> <C-W>h
+map <C-L> <C-W>l
+" maprs out search ,f to display all lines with keyword under cursor and ask which one to
 " jump to
 nmap <leader>f [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 " use <F6> to toggle line numbers
