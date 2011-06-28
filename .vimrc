@@ -100,8 +100,10 @@ set nrformats=octal,hex,alpha
 " Use F10 to toggle 'paste' mode
 set pastetoggle=<F10>
 
-" show relative numbers in the numline
-set relativenumber
+" show relative numbers in the numline in 7.3
+if version >= 703
+	set relativenumber
+endif
 
 " Show line, column number, and relative position within a file in the status line
 set ruler
