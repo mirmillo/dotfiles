@@ -1,0 +1,44 @@
+
+/.VirtualBox/Machines/Chromium/Chromium.xml
+/.VirtualBox/Machines/Chromium/Chromium.xml-prev
+/.VirtualBox/Machines/Chromium/Logs/VBox.log
+/.VirtualBox/Machines/Chromium/Logs/VBox.log.1
+/.VirtualBox/Machines/Chromium/Logs/VBox.log.2
+/.VirtualBox/Machines/Chromium/Logs/VBox.log.3
+/.VirtualBox/VirtualBox.xml
+/.VirtualBox/VirtualBox.xml-prev
+/.gitconfig
+/.jmf/jmf.properties
+/.nbi/log/20091231081622.log
+/.nbi/product-cache/nb-base/6.8.0.0.0/installed-files.xml.gz
+/.nbi/product-cache/nb-php/6.8.0.0.0/installed-files.xml.gz
+/.nbi/registry.xml
+/.nbi/tmp/icon.png
+/.nbi/tmp/icon.png.0
+/.nbi/tmp/logic,1.jar
+/.nbi/tmp/logic,1.jar.0
+/Desktop
+/.VirtualBox
+/AppData
+/Downloads
+/Favorites
+/Library
+/Links
+/Documents
+/Music
+/Pictures
+/Videos
+/Office Genuine Advantage
+/PsiData
+/Saved Games
+/Searches
+/Tracing
+/Virtual Machines
+/Contacts
+/.nbi
+/.jmf
+/.viminfo
+/g2mdlhlpx.exe
+/userdic.tlx
+*.DAT
+ntuser*
