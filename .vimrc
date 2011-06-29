@@ -2,7 +2,13 @@
 " MAIN CUSTOMIZATION FILE
 "
 
-set runtimepath=~/.vim,$VIMRUNTIME,~/.vim/after
+set nocompatible " don't need to be compatible with vi anymore
+
+" moves the .vimrc and other files into the roaming user profile
+if has('win32') || has('win64')
+  set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+endif
+"set runtimepath=~/.vim,$VIMRUNTIME,~/.vim/after
 
 "pathogen
 call pathogen#runtime_append_all_bundles()
@@ -13,8 +19,6 @@ call pathogen#helptags()
 filetype plugin on 
 filetype indent on
 
-set nocompatible " gets rid of all the crap that Vim does to be vi compatible
-
 set modelines=0 " prevents some security exploits having to do with modelines in files
 
 "colorscheme ir_black
@@ -24,6 +28,8 @@ colorscheme mustang
 
 " Turn syntax highlighting on
 syntax on
+
+scriptencoding utf-8
 
 " change the mapleader from \ to ,
 let mapleader=","
@@ -92,7 +98,8 @@ set matchtime=2
 " Don't highlight results of a search
 set hlsearch
 "set nohlsearch
-nnoremap <leader><space> :noh<cr>  "clears out search
+" maps ,space to clear out search
+nnoremap <leader><space> :noh<cr>  
 
 " Enable CTRL-A/CTRL-X to work on octal and hex numbers, as well as characters
 set nrformats=octal,hex,alpha
@@ -172,7 +179,7 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
-" maprs out search ,f to display all lines with keyword under cursor and ask which one to
+" maps ,f to display all lines with keyword under cursor and ask which one to
 " jump to
 nmap <leader>f [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 " use <F6> to toggle line numbers
@@ -254,11 +261,11 @@ nnoremap <S-F12> :simalt ~r<CR>
 " minimize the window size
 nnoremap <S-C-F12> :simalt ~n<CR>
 
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 " easy indentation in visual mode
 " This keeps the visual selection active after indenting.
@@ -266,7 +273,7 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 vmap > >gv
 vmap < <gv
 
-au FileType php,htm,html,xml so c:/program files/vim/vimfiles/plugin/html_autoclosetag.vim
+"au FileType php,htm,html,xml so c:/program files/vim/vimfiles/plugin/html_autoclosetag.vim
 
 nmap <silent> <F4>
 	\ :!ctags.exe -f ./tags
