@@ -110,6 +110,8 @@ set pastetoggle=<F10>
 " show relative numbers in the numline in 7.3
 if version >= 703
 	set relativenumber
+else 
+	set number
 endif
 
 " Show line, column number, and relative position within a file in the status line
