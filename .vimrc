@@ -244,6 +244,12 @@ let php_folding = 1 "to enable folding for classes and functions
 " Increase window size to 35 columns
 let NERDTreeWinSize=35
 
+
+"
+" PIV
+"
+let g:DisableAutoPHPFolding = 0
+
 " map <F7> to toggle NERDTree window
 nmap <silent> <F7> :NERDTreeToggle<CR>
 
@@ -254,7 +260,7 @@ set makeprg=C:\wamp\bin\php\php5.3.0\php.exe\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
 " tab navigation like firefox
-:nmap <C-S-tab> :tabprevious<cr>
+:nmap <C-S-tab> :tabprevious
 :nmap <C-tab> :tabnext<cr>
 
 " maximize window size and make all split windows the same size
@@ -272,7 +278,7 @@ nnoremap <S-C-F12> :simalt ~n<CR>
 
 " easy indentation in visual mode
 " This keeps the visual selection active after indenting.
-" Usually the visual selection is lost after you indent it.
+" Usually the visual selection is lost after you indent it
 vmap > >gv
 vmap < <gv
 
