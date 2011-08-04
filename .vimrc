@@ -24,7 +24,8 @@ set modelines=0 " prevents some security exploits having to do with modelines in
 "colorscheme ir_black
 "colorscheme railscasts
 "colorscheme vividchalk
-colorscheme mustang
+"colorscheme mustang
+colorscheme lucius
 
 " Turn syntax highlighting on
 syntax on
