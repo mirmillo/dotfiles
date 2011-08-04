@@ -21,4 +21,4 @@
 	url = https://github.com/ornicar/vim-yankring.git
 [submodule ".vim/bundle/piv"]
 	path = .vim/bundle/piv
-	url = git://github.com/spf13/PIV.git
+	url = https://github.com/spf13/PIV.git
