@@ -24,4 +24,4 @@
 	url = https://github.com/spf13/PIV.git
 [submodule ".vim/bundle/closetag"]
 	path = .vim/bundle/closetag
-	url = git://github.com/docunext/closetag.vim.git
+	url = https://github.com/docunext/closetag.vim.git
