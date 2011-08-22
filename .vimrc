@@ -296,3 +296,9 @@ set tags=./tags,tags
 " easily edit and reload _vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" closetag see http://mirnazim.org/writings/vim-plugins-i-use/
+" Only load closetag on files that might use it
+autocmd FileType html,htm,xhtml,xml,py,php let b:closetag_html_style=1
+autocmd FileType html,htm,xhtml,xml,py,php source ~/.vim/bundle/closetag/plugin/closetag.vim
+
