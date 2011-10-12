@@ -316,8 +316,17 @@ set makeprg=C:\wamp\bin\php\php5.3.0\php.exe\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
 " tab navigation like firefox
-:nmap <C-S-tab> :tabprevious
+set showtabline=2               " File tabs allways visible
+:nmap <C-S-tab> :tabprevious<cr>
 :nmap <C-tab> :tabnext<cr>
+:nmap <C-t> :tabnew<cr>
+:map <C-t> :tabnew<cr>
+:map <C-S-tab> :tabprevious<cr>
+:map <C-tab> :tabnext<cr>
+:map <C-w> :tabclose<cr>
+:imap <C-S-tab> <ESC>:tabprevious<cr>i
+:imap <C-tab> <ESC>:tabnext<cr>i
+:imap <C-t> <ESC>:tabnew<cr
 
 " maximize window size and make all split windows the same size
 nnoremap <C-F12> :simalt ~x<CR><C-W>
@@ -326,11 +335,15 @@ nnoremap <S-F12> :simalt ~r<CR>
 " minimize the window size
 nnoremap <S-C-F12> :simalt ~n<CR>
 
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
+" let supertab use omnicomplete
+let g:SuperTabDefaultCompletionType = "context"
+
 
 " easy indentation in visual mode
 " This keeps the visual selection active after indenting.
