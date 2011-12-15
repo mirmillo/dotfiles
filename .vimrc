@@ -24,7 +24,8 @@ set modelines=0 " prevents some security exploits having to do with modelines in
 "colorscheme ir_black
 "colorscheme railscasts
 "colorscheme vividchalk
-colorscheme mustang
+"colorscheme mustang
+colorscheme lucius
 
 " Turn syntax highlighting on
 syntax on
@@ -161,6 +162,62 @@ set wildmenu
 "   - on second <Tab>, complete the next full match and show menu
 set wildmode=list:longest,full
 
+" MSWin stuff
+"use ctrl-Q for visual mode and ctrl-v for paste
+"behave mswin
+" backspace in Visual mode deletes selection
+vnoremap <BS> d
+
+" CTRL-X and SHIFT-Del are Cut
+vnoremap <C-X> "+x
+vnoremap <S-Del> "+x
+
+" CTRL-C and CTRL-Insert are Copy
+vnoremap <C-C> "+y
+vnoremap <C-Insert> "+y
+
+" CTRL-V and SHIFT-Insert are Paste
+map <C-V>		"+gP
+map <S-Insert>		"+gP
+
+cmap <C-V>		<C-R>+
+cmap <S-Insert>		<C-R>+
+
+" Pasting blockwise and linewise selections is not possible in Insert and
+" Visual mode without the +virtualedit feature.  They are pasted as if they
+" were characterwise instead.
+" Uses the paste.vim autoload script.
+
+exe 'inoremap <script> <C-V>' paste#paste_cmd['i']
+exe 'vnoremap <script> <C-V>' paste#paste_cmd['v']
+
+imap <S-Insert>		<C-V>
+vmap <S-Insert>		<C-V>
+
+" Use CTRL-Q to do what CTRL-V used to do
+noremap <C-Q>		<C-V>
+
+" Use CTRL-S for saving, also in Insert mode
+noremap <C-S>		:update<CR>
+vnoremap <C-S>		<C-C>:update<CR>
+inoremap <C-S>		<C-O>:update<CR>
+
+" For CTRL-V to work autoselect must be off.
+" On Unix we have two selections, autoselect can be used.
+if !has("unix")
+  set guioptions-=a
+endif
+
+" CTRL-Z is Undo; not in cmdline though
+noremap <C-Z> u
+inoremap <C-Z> <C-O>u
+
+" CTRL-Y is Redo (although not repeat); not in cmdline though
+noremap <C-Y> <C-R>
+inoremap <C-Y> <C-O><C-R>
+
+" /mswin stuff
+
 " Go back to the position the cursor was on the last time this file was edited
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")|execute("normal `\"")|endif
 
@@ -243,6 +300,12 @@ let php_folding = 1 "to enable folding for classes and functions
 " Increase window size to 35 columns
 let NERDTreeWinSize=35
 
+
+"
+" PIV
+"
+let g:DisableAutoPHPFolding = 0
+
 " map <F7> to toggle NERDTree window
 nmap <silent> <F7> :NERDTreeToggle<CR>
 
@@ -253,8 +316,17 @@ set makeprg=C:\wamp\bin\php\php5.3.0\php.exe\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
 " tab navigation like firefox
+set showtabline=2               " File tabs allways visible
 :nmap <C-S-tab> :tabprevious<cr>
 :nmap <C-tab> :tabnext<cr>
+:nmap <C-t> :tabnew<cr>
+:map <C-t> :tabnew<cr>
+:map <C-S-tab> :tabprevious<cr>
+:map <C-tab> :tabnext<cr>
+:map <C-w> :tabclose<cr>
+:imap <C-S-tab> <ESC>:tabprevious<cr>i
+:imap <C-tab> <ESC>:tabnext<cr>i
+:imap <C-t> <ESC>:tabnew<cr
 
 " maximize window size and make all split windows the same size
 nnoremap <C-F12> :simalt ~x<CR><C-W>
@@ -263,15 +335,19 @@ nnoremap <S-F12> :simalt ~r<CR>
 " minimize the window size
 nnoremap <S-C-F12> :simalt ~n<CR>
 
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+
+" let supertab use omnicomplete
+let g:SuperTabDefaultCompletionType = "context"
+
 
 " easy indentation in visual mode
 " This keeps the visual selection active after indenting.
-" Usually the visual selection is lost after you indent it.
+" Usually the visual selection is lost after you indent it
 vmap > >gv
 vmap < <gv
 
@@ -289,3 +365,9 @@ set tags=./tags,tags
 " easily edit and reload _vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+" closetag see http://mirnazim.org/writings/vim-plugins-i-use/
+" Only load closetag on files that might use it
+autocmd FileType html,htm,xhtml,xml,py,php let b:closetag_html_style=1
+autocmd FileType html,htm,xhtml,xml,py,php source ~/.vim/bundle/closetag/plugin/closetag.vim
+

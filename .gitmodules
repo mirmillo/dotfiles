@@ -19,3 +19,15 @@
 [submodule ".vim/bundle/vim-yankring"]
 	path = .vim/bundle/vim-yankring
 	url = https://github.com/ornicar/vim-yankring.git
+[submodule ".vim/bundle/piv"]
+	path = .vim/bundle/piv
+	url = https://github.com/spf13/PIV.git
+[submodule ".vim/bundle/closetag"]
+	path = .vim/bundle/closetag
+	url = https://github.com/docunext/closetag.vim.git
+[submodule ".vim/bundle/css-color"]
+	path = .vim/bundle/css-color
+	url = https://github.com/skammer/vim-css-color.git
+[submodule ".vim/bundle/supertab"]
+	path = .vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
