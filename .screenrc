@@ -4,7 +4,6 @@ hardstatus off
 #hardstatus alwayslastline
 #hardstatus string "%{+b wk} %-w%{+b wk} %n %t %{-}%+w %41=%H @ %l %-= %= %D,%c:%s "
 #caption always "%{= kb}%-Lw%{= kc}%50>%n%f* %t%{-}%+Lw%<"
-#hardstatus off
 #hardstatus alwayslastline "%{+b wk} %-w%{+b wk} %n %t %{-}%+w %41=%H @ %l %-= %= %D,%c:%s "
 #hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]'
 #caption always "%{+b rk}%H%{gk} |%c %{yk}%m.%d.%Y | %{rw}%n%f %t %{bk} | %?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%? | %{rk} Load: %l %{wk}"
@@ -13,4 +12,5 @@ caption always "%{+b rk}%H%{gk} |%c %{yk}%m.%d.%Y | %?%-Lw%?%{bw}%n*%f %t%?(%u)%
 screen -t bash 
 #screen -t Bakhara tf
 screen -t irssi irssi
+screen -t bash 
 select 1
