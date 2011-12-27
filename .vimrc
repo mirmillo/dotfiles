@@ -14,6 +14,10 @@ endif
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+if ($TERM == 'screen')
+	set term=xterm-256color
+endif
+
 
 " Enable loading filetype and indentation plugins
 filetype plugin on 
@@ -310,8 +314,8 @@ let g:DisableAutoPHPFolding = 0
 nmap <silent> <F7> :NERDTreeToggle<CR>
 
 " PHP parser check (CTRL-L)
-:autocmd FileType php noremap <C-L> :!C:\wamp\bin\php\php5.3.0\php.exe -l %<CR>
-:autocmd FileType php noremap <C-M> :!C:\wamp\bin\php\php5.3.0\php.exe %<CR>
+":autocmd FileType php noremap <C-L> :!C:\wamp\bin\php\php5.3.0\php.exe -l %<CR>
+":autocmd FileType php noremap <C-M> :!C:\wamp\bin\php\php5.3.0\php.exe %<CR>
 set makeprg=C:\wamp\bin\php\php5.3.0\php.exe\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
