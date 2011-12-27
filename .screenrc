@@ -9,6 +9,16 @@ hardstatus off
 #caption always "%{+b rk}%H%{gk} |%c %{yk}%m.%d.%Y | %{rw}%n%f %t %{bk} | %?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%? | %{rk} Load: %l %{wk}"
 caption always "%{+b rk}%H%{gk} |%c %{yk}%m.%d.%Y | %?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%? | %{rk    } Load: %l %{wk}"
 
+altscreen on #clear screen after closing some programs
+
+# terminfo and termcap for nice 256 color terminal
+# # allow bold colors - necessary for some reason
+attrcolor b ".I"
+# # tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# # erase background with current bg color
+defbce "on"
+
 screen -t bash 
 #screen -t Bakhara tf
 screen -t irssi irssi
