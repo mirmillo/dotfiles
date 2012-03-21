@@ -1,7 +1,6 @@
 "
 " MAIN CUSTOMIZATION FILE
 "
-"test on new windows box
 set nocompatible " don't need to be compatible with vi anymore
 
 " moves the .vimrc and other files into the roaming user profile
