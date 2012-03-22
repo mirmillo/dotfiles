@@ -326,7 +326,7 @@ set showtabline=2               " File tabs allways visible
 :map <C-t> :tabnew<cr>
 :map <C-S-tab> :tabprevious<cr>
 :map <C-tab> :tabnext<cr>
-:map <C-w> :tabclose<cr>
+":map <C-w> :tabclose<cr>
 :imap <C-S-tab> <ESC>:tabprevious<cr>i
 :imap <C-tab> <ESC>:tabnext<cr>i
 :imap <C-t> <ESC>:tabnew<cr
