@@ -49,7 +49,7 @@ if has("gui_running")
         elseif has("x11")
             set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
         else
-            set guifont=Consolas
+           set guifont=Consolas
         endif
     endif 
 
@@ -315,7 +315,7 @@ nmap <silent> <F7> :NERDTreeToggle<CR>
 " PHP parser check (CTRL-L)
 ":autocmd FileType php noremap <C-L> :!C:\wamp\bin\php\php5.3.0\php.exe -l %<CR>
 ":autocmd FileType php noremap <C-M> :!C:\wamp\bin\php\php5.3.0\php.exe %<CR>
-set makeprg=C:\wamp\bin\php\php5.3.0\php.exe\ -l\ %
+set makeprg=C:\wamp\bin\php\php5.3.10\php.exe\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
 " tab navigation like firefox
