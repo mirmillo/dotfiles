@@ -374,3 +374,5 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 autocmd FileType html,htm,xhtml,xml,py,php let b:closetag_html_style=1
 autocmd FileType html,htm,xhtml,xml,py,php source ~/.vim/bundle/closetag/plugin/closetag.vim
 
+"neocomplcache
+let g:neocomplcache_enable_at_startup = 1
