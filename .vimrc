@@ -376,3 +376,13 @@ autocmd FileType html,htm,xhtml,xml,py,php source ~/.vim/bundle/closetag/plugin/
 
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1
+
+"airline config
+let g:airline_enable_branch=1
+let g:airline_branch_empty_message=''
+
+let g:airline_detect_modified=1
+let g:airline_enable_syntastic=1
+
+
+
