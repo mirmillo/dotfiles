@@ -10,8 +10,9 @@ endif
 "set runtimepath=~/.vim,$VIMRUNTIME,~/.vim/after
 
 "pathogen
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+execute pathogen#infect()
+"call pathogen#runtime_append_all_bundles()
+"call pathogen#helptags()
 
 if ($TERM == 'screen')
 	set term=xterm-256color
@@ -49,7 +50,8 @@ if has("gui_running")
         elseif has("x11")
             set guifont=-*-courier-medium-r-normal-*-*-180-*-*-m-*-*
         else
-           set guifont=Consolas
+          " set guifont=Consolas
+           set guifont=Hack:h8:cANSI
         endif
     endif 
 
@@ -315,7 +317,7 @@ nmap <silent> <F7> :NERDTreeToggle<CR>
 " PHP parser check (CTRL-L)
 ":autocmd FileType php noremap <C-L> :!C:\wamp\bin\php\php5.3.0\php.exe -l %<CR>
 ":autocmd FileType php noremap <C-M> :!C:\wamp\bin\php\php5.3.0\php.exe %<CR>
-set makeprg=C:\wamp\bin\php\php5.3.10\php.exe\ -l\ %
+set makeprg=C:\wamp\bin\php\php5.4.12\php.exe\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
 " tab navigation like firefox
@@ -384,5 +386,9 @@ let g:airline_branch_empty_message=''
 let g:airline_detect_modified=1
 let g:airline_enable_syntastic=1
 
-
+"syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
